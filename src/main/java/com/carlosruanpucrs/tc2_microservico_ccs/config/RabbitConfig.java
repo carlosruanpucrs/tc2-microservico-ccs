@@ -45,9 +45,9 @@ public class RabbitConfig {
     }
 
     @Bean
-    public Binding bacenBinding(Queue bacenQueue, DirectExchange bacenExchange) {
-        return BindingBuilder.bind(bacenQueue)
-                .to(bacenExchange)
+    public Binding bacenBinding() {
+        return BindingBuilder.bind(bacenQueue())
+                .to(bacenExchange())
                 .with(CONTA_ROUTING_KEY_BACEN);
     }
 
